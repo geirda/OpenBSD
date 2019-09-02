@@ -1,0 +1,9 @@
+background no
+out_to_console yes
+out_to_x no
+update_interval 1.0
+total_run_times 0
+use_spacer none
+
+TEXT
+^fg(\#77aa88)RAM: ^fg(\#99ccee)${execi 5 /home/geir/bin/free2}B  ^fg(\#4a4a4a)|  ^fg(\#dd9955)Core1: ^fg(\#ff9999)${cpu cpu0}%  ^fg(\#dd9955)Core2: ^fg(\#ff9999)${cpu cpu1}%  ^fg(\#4a4a4a)|  ^fg(\#d8bfd8)CPU temp: ^fg(\#ccbb66)${execi 5 /sbin/sysctl hw.sensors|head -1|cut -b 23-26}°C  ^fg(\#d8bfd8)PCH temp: ^fg(\#ccbb66)${execi 5 /sbin/sysctl hw.sensors|tail -1|cut -b 27-30}°C  ^fg(\#4a4a4a)|^fg(\#99cc99)  Uptime: $uptime_short  ^fg(\#4a4a4a)|  ^fg()${time %a %d %b %H:%M}   

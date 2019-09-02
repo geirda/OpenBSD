@@ -1,0 +1,25 @@
+[global_config]
+  inactive_color_offset = 1.0
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    custom_command = /usr/local/bin/fish
+    font = Hack Nerd Font 12
+    foreground_color = "#839496"
+    palette = "#2e3436:#9e453e:#8c9e33:#ad9a2d:#6b82ab:#9b7aac:#5c8c84:#d3d7cf:#555753:#c8544d:#b0c53e:#dac135:#87a5dc:#c398d8:#7abdb1:#fdf6e3"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_custom_command = True
+    use_system_font = False

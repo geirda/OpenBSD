@@ -1,0 +1,17 @@
+@@ -1435,7 +1460,7 @@
+ 	detachstack(c);
+ 	c->mon = m;
+ 	c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
+-	attach(c);
++	attachaside(c);
+ 	attachstack(c);
+ 	focus(NULL);
+ 	arrange(NULL);
+@@ -1916,6 +1941,7 @@
+ 					detachstack(c);
+ 					c->mon = mons;
+ 					attach(c);
++					attachaside(c);
+ 					attachstack(c);
+ 				}
+ 				if (m == selmon)

@@ -1,0 +1,73 @@
+! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
+
+*VT100.Translations: #override \
+              <Key>BackSpace: string(0x7F)\n\
+              <Key>Delete:    string("\033[3~")
+!              <Key>Home:      string("\033[1~")\n\
+!              <Key>End:       string("\033[4~")
+*ttyModes: erase ^?
+
+! Base colors
+
+*.color0:  #2e3436
+*.color1:  #9e453e
+*.color2:  #8c9e33
+*.color3:  #ad9a2d
+*.color4:  #6b82ab
+*.color5:  #9b7aac
+*.color6:  #5c8c84
+*.color7:  #c6c6c6
+*.color8:  #555753
+*.color9:  #c8544d
+*.color10: #b0c53e
+*.color11: #dac135
+*.color12: #87a5dc
+*.color13: #c398d8
+*.color14: #7abdb1
+*.color15: #fdf6e3
+
+! XTerm
+XTerm*loginShell:true
+! double-click to select whole URLs :D
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+! right hand side scrollbar...
+XTerm*rightScrollBar: true
+XTerm*ScrollBar: false
+XTerm*termName: xterm-256color
+XTerm*foreground:  #95abb3
+XTerm*background:  #0c1013
+XTerm*faceName: UbuntuMono Nerd Font:size=14:antialias=true
+
+! Emacs
+emacs.geometry:=120x48-20+10
+emacs.font: UbuntuMono:size=18
+
+! URxvt
+
+URxvt*foreground:  #95abb3
+URxvt*background: [93]#0c1013
+URxvt*loginShell: true
+URxvt*saveline: 15000
+URxvt*termName: rxvt-256color
+URxvt*iso14755: false
+URxvt*depth: 32
+URxvt*scrollBar: false
+URxvt*scrollBar_right: true
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
+!URxvt*letterSpace: -1
+URxvt*font: xft:Hack Nerd Font:size=12
+URxvt*copyCommand: xclip -i -selection clipboard
+URxvt*pasteCommand: xclip -o -selection clipboard
+URxvt*keysym.m-c: perl:clipboard:copy
+URxvt*keysym.m-v: perl:clipboard:paste
+URxvt*urlLauncher: exo-open
+URxvt*underlineURLs: true
+URxvt*urlButton: 1
+URxvt*geometry: 90x30
+URxvt*tabbed.tabbar-fg: 4
+URxvt*tabbed.tabbar-bg: 16
+URxvt*tabbed.tab-fg: 15
+URxvt*tabbed.tab-bg: 4
+URxvt*buffered: false
+URxvt*cursorBlink: true

@@ -1,0 +1,4 @@
+set from = "geirda@outlook.com"
+set realname = "Geir Damstuen"
+
+source ~/.config/mutt/color.muttrc

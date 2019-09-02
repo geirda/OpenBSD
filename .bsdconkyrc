@@ -1,0 +1,131 @@
+#conky.config = {
+#-- Conky settings #
+	background yes
+	update_interval 1
+	double_buffer true
+	no_buffers true
+	imlib_cache_size 10
+	times_in_seconds no
+
+#-- Window specifications #
+	gap_x  10
+	gap_y  48
+	minimum_size  280 5
+	maximum_width 280
+	alignment top_right
+	own_window yes
+	own_window_type desktop
+	own_window_transparent yes
+	own_window_argb_visual yes
+	own_window_argb_value 255
+	own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+	border_inner_margin 0
+	border_outer_margin 0
+
+#-- Graphics settings #
+	draw_shades no
+	default_shade_color aaaaaa
+	draw_outline no
+	default_outline_color = aaaaaa
+	default_color ffffff
+	draw_borders no
+	draw_graph_borders no
+	default_graph_size 26 80
+	show_graph_scale no
+	show_graph_range no
+
+#-- Text settings #
+	use_xft yes
+	xftalpha 0.1
+	xftfont Ubuntu:size=9
+	text_buffer_size 256
+	override_utf8_locale yes
+	color1 c5c8c6
+	color2 c5dbe3
+	color3 f0c674
+	color4 fcd862
+#	color5 7192ae
+	color5 989393
+	color6 f2ca30
+	color7 cf4229
+	color8 fbf259
+	color9 f86b4b
+
+#};
+
+#conky.text = [[
+TEXT
+${font Arial Black:size=36}${color1}$alignc${time %H}${font Ubuntu:size=24}${voffset -12}$color3:${font Arial Black:size=24}$color2${voffset -5}${time %M}${font}
+${voffset -22}$alignr${color5}${time %A}       
+${voffset +10}$alignr${font Ubuntu:size=8:weight:italic}$color2${time %d. %B}                      
+${font DejaVu Sans:size=18:weight:italic}${color afd1ed}$alignr${voffset -23}${time %Y}  
+
+$alignc${voffset -20}${font Times:size=18:weight:bold}${color7}_________
+$alignc${voffset -36}${font Times:size=20:weight:bold:italic}${color6}Open${font Times:size=20:weight:bold}${color7}BSD
+${voffset -75}
+
+${font Ubuntu:size=11}${color4}SYSTEM ${color Tan4}$hr
+$font${color5}$sysname $kernel $alignr$machine
+Uptime: $alignr$uptime_short
+CPU Clock Frequence: $alignr${freq cpu0}Mhz
+
+${font Ubuntu:size=11}${color4}TEMPERATURE ${color Tan4}$hr
+$font${color5}Hovedkort: $alignr${execi 5 /sbin/sysctl hw.sensors|tail -1|cut -b27-30}°C
+CPU: $alignr${execi 5 /sbin/sysctl hw.sensors|head -1|cut -b23-26}°C
+
+${font Ubuntu:size=11}${color4}PROCESSOR ${color Tan4}$hr
+$font${color5}Core 1  ${cpu cpu0}% ${cpubar cpu0}
+$font${color5}Core 2  ${cpu cpu1}% ${cpubar cpu1}
+#$font${color5}Core 3  ${cpu cpu2}% ${cpubar cpu2}
+#$font${color5}Core 4  ${cpu cpu3}% ${cpubar cpu3}
+
+${font Ubuntu:size=11}${color4}MEMORY ${color Tan4}$hr
+$font${color5}MEM $alignc      $mem / $memmax $alignr $memperc%
+$membar
+$font${color5}SWAP $alignc      $swap / $swapmax $alignr $swapperc%
+$swapbar
+
+${font Ubuntu:size=11}${color4}HDD ${color Tan4}$hr
+$font${color5}/ $alignc         ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${fs_bar /}
+/home $alignc         ${fs_used /home} / ${fs_size /home/} $alignr ${fs_used_perc /home}%
+${fs_bar /home}
+/tmp $alignc         ${fs_used /tmp} / ${fs_size /tmp} $alignr ${fs_used_perc /tmp}%
+${fs_bar /tmp}
+/usr $alignc         ${fs_used /usr} / ${fs_size /usr} $alignr ${fs_used_perc /usr}%
+${fs_bar /usr}
+/usr/X11R6 $alignc         ${fs_used /usr/X11R6} / ${fs_size /usr/X11R6} $alignr ${fs_used_perc /usr/X11R6}%
+${fs_bar /usr/X11R6}
+/usr/local $alignc         ${fs_used /usr/local} / ${fs_size /usr/local/} $alignr ${fs_used_perc /usr/local}%
+${fs_bar /usr/local}
+/usr/obj $alignc         ${fs_used /usr/obj} / ${fs_size /usr/obj} $alignr ${fs_used_perc /usr/obj}%
+${fs_bar /usr/obj}
+/usr/src $alignc         ${fs_used /usr/src} / ${fs_size /usr/src} $alignr ${fs_used_perc /usr/src}%
+${fs_bar /usr/src}
+/var $alignc         ${fs_used /var} / ${fs_size /var} $alignr ${fs_used_perc /var}%
+${fs_bar /var}
+
+${font Ubuntu:size=11}${color4}TOP PROCESSES ${color Tan4}$hr
+$font${color5}${top name 1}$alignr${top cpu 1} %
+${top name 2}$alignr${top cpu 2} %
+${top name 3}$alignr${top cpu 3} %
+${top name 4}$alignr${top cpu 4} %
+
+${font Ubuntu:size=11}${color4}NETWORK ${color Tan4}$hr
+$font${color5}External IP: $alignr${execi 60 curl  ipinfo.io/ip}
+Internal IP: $alignr${addr re0}
+
+Down $alignr${downspeed re0}
+Up $alignr${upspeed re0}
+
+Downloaded: $alignr${totaldown re0}
+Uploaded: $alignr${totalup re0}
+
+${font Ubuntu:size=11}${color4}VÆR ${color Tan4}$hr
+$font${color5}Soloppgang: $alignr ${execi 60 cat ~/Linux/.yr/varsel.xml|grep sun|grep rise|cut -b25-29}
+Solnedgang: $alignr ${execi 60 cat ~/Linux/.yr/varsel.xml|grep sun|grep rise|cut -b51-55}
+
+$font${color5}Temperatur hjemme: $alignr${execi 60 cat ~/Linux/.yr/data.txt|head -1}°C
+Temperatur jobb: $alignr${execi 60 cat ~/Linux/.yr/data.txt|tail -n +2|head -1}°C
+Nedbør: $alignr${execi 60 cat ~/Linux/.yr/data.txt|tail -1} mm
+#]];
