@@ -1,2 +1,2 @@
 # OpenBSD
-config files for OpenBSD
+dotfiles for OpenBSD
