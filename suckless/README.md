@@ -7,3 +7,5 @@ Slightly patched and modified.
 
 * ST: modified colors, uses Hack Nerd Font.
 	Patches: alpha, scrollback, scrollback-mouse, scrollback-mouse-altscreen
+
+![suckless](https://raw.githubusercontent.com/geirda/OpenBSD/master/screenshots/dwm-st.png)
