@@ -1,3 +1,4 @@
+#include "/usr/local/share/nano/*.nanorc"
 include "~/.nano/*.nanorc"
 set linenumbers
 set softwrap
