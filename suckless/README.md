@@ -6,6 +6,9 @@ Slightly patched and modified.
 	Patches: attachbelow, autostart, fullgaps, rotatestack, statuspadding, titlecolor
 
 * st: modified colors, Hack Nerd Font.
-	Patches: alpha, scrollback, scrollback-mouse, scrollback-mouse-altscreen
+	Patches: alphaFocusHighlight, scrollback, scrollback-mouse, scrollback-mouse-altscreen
+
+* dmenu:
+        Patches: lineheight
 
 ![suckless](https://raw.githubusercontent.com/geirda/OpenBSD/master/suckless/dwm-st.png)
