@@ -1,5 +1,5 @@
 VERT=`hostname -s`
- PS1='$(echo -e "\033[1;34m$(/home/geir/.local/bin/replacehome.sh)\033[1;32m ❯\033[00m") '
+ PS1='$(echo -e "\033[1;34m$(pwd | sed -E "s-^$HOME($|(/.*))-~\2-")\033[1;32m ❯\033[00m") '
 #PS1='${USER}@$VERT:${PWD}> '
 export PS1
 export XTERM_LOCALE=nb_NO.UTF-8
