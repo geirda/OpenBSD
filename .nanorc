@@ -1,5 +1,5 @@
 include "/usr/local/share/nano/*.nanorc"
-#include "~/.nano/*.nanorc"
+#include "~/.local/share/nano/*.nanorc"
 set linenumbers
 set softwrap
 set titlecolor brightwhite,blue
