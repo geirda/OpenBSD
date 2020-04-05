@@ -1,30 +1,42 @@
-# vim: set noet:
-#
-# Set the default prompt command.
-
-function fish_prompt --description "Write out the prompt"
-    set -l color_cwd
-    set -l color_mappe
-    set -l bg1
-    set -l bg2
-    set -l suffix
-    set -l arrow
-    switch "$USER"
-        case root toor
-	    set color_cwd brred
-	    set bg1 444444
-	    set color_mappe black
-	    set bg2 brblue
-            set suffix '#'
-	    set arrow ''
-        case '*'
-	    set color_cwd brgreen
-	    set bg1 333333
-	    set color_mappe 2e3436
-	    set bg2 7aa4d8
-	    set suffix ' '
-            set arrow ''
-    end
-
-    echo -n -s (set_color -o $color_cwd -b $bg1) "$USER" @ (prompt_hostname) ' ' (set_color $bg1 -b $bg2) "$arrow" ' ' (set_color -o $color_mappe -b $bg2) (prompt_pwd) "$suffix" (set_color $bg2 -b normal) "$arrow" (set_color normal) ' '
+# name: mars (based on eclm)
+function _git_branch_name
+  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
 end
+
+function _is_git_dirty
+  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+end
+
+function fish_prompt
+  set -l last_status $status
+  set -l cyan (set_color -o cyan)
+  set -l yellow (set_color -o yellow)
+  set -l red (set_color -o red)
+  set -l blue (set_color -o blue)
+  set -l green (set_color -o green)
+  set -l normal (set_color normal)
+
+  if test $last_status = 0
+      set arrow " $green❯︎︎"
+  else
+      set arrow " $red❯︎︎"
+  end
+  set -l cwd $cyan(prompt_pwd)
+
+  if [ (_git_branch_name) ]
+    set git_branch (_git_branch_name)
+
+    if [ (_is_git_dirty) ]
+      set git_info "$blue ($yellow$git_branch±$blue)"
+    else
+      if test (_git_branch_name) = 'master'
+        set git_info "$blue ($red$git_branch$blue)"
+      else
+        set git_info "$blue ($normal$git_branch$blue)"
+      end
+    end
+  end
+
+  echo -n -s $cwd $git_info $normal $arrow $normal ' '
+end
+
