@@ -58,14 +58,19 @@ map <C-v> "*P
 vnoremap <C-c> "*y :let @+=@*<CR>
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='angr'
+let g:airline_theme='badwolf'
 
-colo ron
+colo koehler
 syntax on
 
 " hi Normal ctermbg=232
 hi LineNr ctermfg=242
-hi CursorLineNr ctermfg=15
+hi CursorColumn ctermbg=234 cterm=bold
+hi CursorLine ctermbg=234 cterm=bold
+hi CursorLineNr ctermfg=248 ctermbg=234 cterm=bold
+hi StatusLine cterm=bold ctermbg=235 ctermfg=246
 " hi VertSplit ctermfg=8 ctermbg=0
 " hi Statement ctermfg=3
+hi WildMenu term=standout cterm=bold ctermbg=Green ctermfg=Black
