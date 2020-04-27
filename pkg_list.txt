@@ -8,6 +8,7 @@ fish--
 git--
 gtk2-murrine-engine--
 hack-fonts--
+highlight--
 htop--
 lxappearance--
 most--
@@ -18,6 +19,7 @@ nitrogen--
 paper-icon-theme--
 pcmanfm--
 quirks--
+ranger--
 rofi--
 scrot--
 vim--no_x11
