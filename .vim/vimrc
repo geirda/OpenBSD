@@ -1,0 +1,90 @@
+" An example for a vimrc file.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2019 Dec 17
+"
+" To use it, copy it to
+"     	       for Unix:  ~/.vimrc
+"	      for Amiga:  s:.vimrc
+"	 for MS-Windows:  $VIM\_vimrc
+"	      for Haiku:  ~/config/settings/vim/vimrc
+"	    for OpenVMS:  sys$login:.vimrc
+
+" When started as "evim", evim.vim will already have done these settings, bail
+" out.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+if &t_Co > 2 || has("gui_running")
+  " Switch on highlighting the last used search pattern.
+  set hlsearch
+endif
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+augroup END
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+" Copy and paste
+map <C-v> "*P
+vnoremap <C-c> "*y :let @+=@*<CR>
+
+" Set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Misc settings
+set nobackup
+set number
+set laststatus=2
+" set t_Co=256
+set termguicolors
+set splitbelow splitright
+" set cursorline
+set ignorecase
+set smartcase
+
+" NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen = 1
+nmap <F5> :NERDTreeToggle<CR>
+nmap <F6> :NERDTreeFind<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_default'
+
+" Colors
+colo kuhler
+hi LineNr ctermfg=242 guifg=#6c6c6c
+hi CursorColumn ctermbg=234 cterm=bold guibg=#1c1c1c
+hi CursorLine ctermbg=234 cterm=bold guibg=#1c1c1c
+hi CursorLineNr ctermfg=248 ctermbg=234 cterm=bold guifg=#a8a8a8 guibg=#1c1c1c
+hi StatusLine cterm=bold ctermbg=235 ctermfg=246 guibg=#262626 guifg=#949494
+hi VertSplit cterm=bold ctermbg=235 ctermfg=238 guibg=#262626 guifg=#444444
+hi WildMenu term=standout cterm=bold ctermbg=Green ctermfg=Black guibg=#a1b56c guifg=Black

@@ -22,5 +22,5 @@ quirks--
 ranger--
 rofi--
 scrot--
-vim--no_x11
+vim--gtk3
 xz--
