@@ -1,1 +1,19 @@
-source ~/.config/mutt/color.muttrc
+source ~/.config/mutt/lscolor.muttrc
+
+set header_cache = "~/.cache/mutt"
+set edit_headers = yes
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+set sort_re
+
+set delete
+set delete_untag
+unset confirmappend
+
+#set sidebar_visible
+set sidebar_width = 20
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_short_path
+set mail_check_stats
+bind index,pager B sidebar-toggle-visible
