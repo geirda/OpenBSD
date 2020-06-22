@@ -5,6 +5,8 @@ exa--
 faenza-icon-theme--
 firefox--
 fish--
+font-awesome--
+gimp--
 git--
 gtk2-murrine-engine--
 hack-fonts--
