@@ -36,11 +36,27 @@ XTerm*ScrollBar: false
 XTerm*termName: xterm-256color
 XTerm*foreground:  #95abb3
 XTerm*background:  #0c1013
-XTerm*faceName: UbuntuMono Nerd Font:size=14:antialias=true
+XTerm*faceName: monospace:pixelsize=14
+!XTerm*faceName: DejaVu Sans Mono:size=11:antialias=true
+!XTerm*font: -misc-fixed-medium-*-*-14-*
+
+! XConsole
+XConsole*foreground: \#95abb3
+XConsole*background: \#0c1013
+
+! XClock
+XClock*background: \#0c1013
+XClock*foreground: \#a7a7a7
+XClock*hands: \#a7a7a7
+XClock*highlight: \#95abb3
+XClock*hourColor: \#a7a7a7
+XClock*minuteColor: \#a7a7a7
+XClock*majorColor: \#95abb3
+XClock*minorColor: \#859ba3
 
 ! Emacs
 emacs.geometry:=120x48-20+10
-emacs.font: UbuntuMono:size=18
+emacs.font: monospace:size=14
 
 ! URxvt
 
@@ -56,7 +72,7 @@ URxvt*scrollBar_right: true
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 !URxvt*letterSpace: -1
-URxvt*font: xft:Hack Nerd Font:size=12
+URxvt*font: xft:monospace:size=11
 URxvt*copyCommand: xclip -i -selection clipboard
 URxvt*pasteCommand: xclip -o -selection clipboard
 URxvt*keysym.m-c: perl:clipboard:copy
