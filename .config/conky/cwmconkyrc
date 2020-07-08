@@ -1,0 +1,27 @@
+update_interval 0.5
+double_buffer yes
+gap_x 0
+gap_y 0
+minimum_size 1920 13
+maximum_width 1920
+alignment top_left
+own_window yes
+own_window_type desktop
+own_window_transparent no
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+
+default_color gray
+color0 A7A7A7
+color1 113C47
+color2 6796a2
+color3 586E75
+color4 657B83
+color5 839496
+color6 93A1A1
+color7 BBB5A2
+color8 CAC3B0
+
+TEXT
+ ${voffset +2}${color2}$sysname $kernel $machine  ${alignr}${color1}|  ${color3}IP: ${color5}${addr em0}  ${color1}|  ${color3}Free disk space:${color5} ${fs_free /usr/local}  ${color1}|  ${color3}Ram:${color5} $mem  ${color1}|  ${color3}Core1:${color6} ${cpu cpu0}%  ${color1}|  ${color3}Core2:${color6} ${cpu cpu1}%  ${color1}|  ${color6}Uptime: ${color7}$uptime_short  ${color1}|  ${color6}Load: ${color8}${loadavg 1 2 3}  ${color1}|  ${color0}${time %a %d %b %H:%M}    
