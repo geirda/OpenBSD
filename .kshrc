@@ -1,4 +1,4 @@
- PS1='$(echo -e "\033[1;34m$(pwd | sed -E "s-^$HOME($|(/.*))-~\2-")\033[1;32m ❯\033[00m") '
+PS1='$(echo -e "\033[1;34m$(pwd | sed -E "s-^$HOME($|(/.*))-~\2-")\033[1;32m ❯\033[00m") '
 #PS1='${USER}@$(hostname -s):${PWD}> '
 export PS1
 export XTERM_LOCALE=nb_NO.UTF-8
@@ -28,3 +28,5 @@ vt220*)
 	tput smkx
 	;;
 esac
+
+fortune
