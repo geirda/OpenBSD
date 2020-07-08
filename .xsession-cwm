@@ -1,6 +1,6 @@
 xsetroot -solid "#2f3444"
 #feh --bg-scale $HOME/Bilder/Bakgrunn.png &
-conky --config /home/geir/.config/conkyrc &
+conky --config /home/geir/.config/conky/cwmconkyrc &
 xterm -geometry 119x34+7+19 &
 xterm -geometry 119x27+7-6 &
 xterm -geometry 117x23-7+19 &
