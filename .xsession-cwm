@@ -1,0 +1,12 @@
+xsetroot -solid "#2f3444"
+#feh --bg-scale $HOME/Bilder/Bakgrunn.png &
+conky --config /home/geir/.config/conkyrc &
+xterm -geometry 119x34+7+19 &
+xterm -geometry 119x27+7-6 &
+xterm -geometry 117x23-7+19 &
+xterm -geometry 117x23-7+423 &
+xterm -fa monospace -fs 8 -geometry 75x18-493-6 -bg "#2c3033" -fg "#de935f" -e top &
+xbiff -fg "#95abb3" -bg "#0c1013" -geometry 105x105-112-139 &
+xload -fg "#95abb3" -bg "#0c1013" -geometry 266x105-217-139 &
+xclock -render -geometry 105x105-7-139 &
+cwm
