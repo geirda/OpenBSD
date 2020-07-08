@@ -49,10 +49,11 @@ XClock*background: \#0c1013
 XClock*foreground: \#a7a7a7
 XClock*hands: \#a7a7a7
 XClock*highlight: \#95abb3
-XClock*hourColor: \#a7a7a7
-XClock*minuteColor: \#a7a7a7
-XClock*majorColor: \#95abb3
-XClock*minorColor: \#859ba3
+XClock*hourColor: \#171717
+XClock*minuteColor: \#272727
+XClock*secondColor: \#474747
+XClock*majorColor: \#253b43
+XClock*minorColor: \#354b53
 
 ! Emacs
 emacs.geometry:=120x48-20+10
