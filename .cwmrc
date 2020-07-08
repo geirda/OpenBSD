@@ -1,10 +1,10 @@
 # Appearance
-fontname "Hack:pixelsize=12:normal"
+fontname "monospace:pixelsize=12:normal"
 color activeborder "#a7a7a7"
 color inactiveborder "#555753"
 color font "#de935f"
 color selfont "#000000"
-color menubg "#2e3436"
+color menubg "#2c3033"
 color menufg "#a7a7a7"
 gap 19 5 5 5
 borderwidth 1
