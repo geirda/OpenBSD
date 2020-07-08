@@ -1,0 +1,79 @@
+# Appearance
+fontname "Hack:pixelsize=12:normal"
+color activeborder "#a7a7a7"
+color inactiveborder "#555753"
+color font "#de935f"
+color selfont "#000000"
+color menubg "#2e3436"
+color menufg "#a7a7a7"
+gap 19 5 5 5
+borderwidth 1
+
+# Window management
+# (C = ctrl, M = meta, 4 = super, S = shift)
+sticky yes
+bind-key CM-q quit
+bind-key CM-r restart
+bind-key 4S-q window-close
+bind-key 4-f window-fullscreen
+bind-key 4-m window-maximize
+bind-key 4-h window-hmaximize
+bind-key 4-v window-vmaximize
+bind-key 4-Down window-lower
+bind-key 4-Up window-raise
+bind-key 4-i window-htile
+bind-key 4-o window-vtile
+
+# Window movement
+moveamount 10
+bind-key 4S-h window-snap-left
+bind-key 4S-j window-snap-down
+bind-key 4S-k window-snap-up
+bind-key 4S-l window-snap-right
+bind-key 4C-h window-move-left
+bind-key 4C-j window-move-down
+bind-key 4C-k window-move-up
+bind-key 4C-l window-move-right
+bind-key 4M-h window-resize-left
+bind-key 4M-j window-resize-down
+bind-key 4M-k window-resize-up
+bind-key 4M-l window-resize-right
+
+# Window groups
+autogroup 0 XLoad
+autogroup 0 XBiff
+autogroup 0 XClock
+autogroup 0 XConsole
+autogroup 2 Firefox
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4-6 group-only-6
+bind-key 4-7 group-only-7
+bind-key 4-8 group-only-8
+bind-key 4-9 group-only-9
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+bind-key 4S-6 window-movetogroup-6
+bind-key 4S-7 window-movetogroup-7
+bind-key 4S-8 window-movetogroup-8
+bind-key 4S-9 window-movetogroup-9
+bind-key 4-j window-cycle-ingroup
+bind-key 4-k window-rcycle-ingroup
+bind-key 4-a group-toggle-all
+
+# Launchers
+bind-key 4-Return xterm
+bind-key CM-Return xterm
+bind-key 4-x menu-exec
+bind-key 4-s firefox
+
+# Application menu
+command Firefox /usr/local/bin/firefox
+command XTerm /usr/X11R6/bin/xterm
+
