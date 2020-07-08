@@ -88,7 +88,7 @@ Mouse 3	TSIF	A	RaiseLower
 
 ######################## Initialization Functions ############################
 AddToFunc InitFunction 	  "I" Module FvwmButtons
-+			  "I" exec xsetroot -solid "#012808"
++			  "I" exec xsetroot -solid "#2f3444"
 
 AddToFunc RestartFunction "I" Module FvwmButtons
 
@@ -261,12 +261,13 @@ AddToFunc ChangeDefaultFocus "I" Style "*" $0
 *FvwmButtons(Frame 1 Swallow(UseOld,NoHints,Respawn) "xclock" `Exec exec xclock -render -bg bisque3 -fg black -hd black -hl black -padding 0 -update 1`)
 *FvwmButtons(Frame 1 Swallow(UseOld,NoHints,Respawn) "xbiff" `Exec exec xbiff -bg bisque3`)
 *FvwmButtons(Frame 1 Swallow(UseOld,NoHints,Respawn) "xload" `Exec exec xload -bg bisque3 -fg black -update 5 -nolabel`)
-*FvwmButtons(Frame 1 Icon xterm-color_48x48.xpm Action(Mouse 1) "exec xterm")
+*FvwmButtons(Frame 1 Icon xterm-color_48x48.xpm Action(Mouse 1) "exec xterm -geometry 90x30")
 *FvwmButtons(Frame 1 Icon xcalc.xpm Action(Mouse 1) "exec xcalc")
 *FvwmButtons(Frame 1 Icon mail2.xpm Action(Mouse 1) "exec xterm -e mail")
 *FvwmButtons(Frame 1 Icon page2.xpm Action(Mouse 1) "exec xterm -e vi")
 *FvwmButtons(Frame 1 Swallow(UseOld) "FvwmPager" "Module FvwmPager 0 0")
-*FvwmButtons(Frame 1 Icon exit.xpm Action(Mouse 1) "Quit")
+#*FvwmButtons(Frame 1 Icon exit.xpm Action(Mouse 1) "Quit")
+*FvwmButtons(Frame 1 Icon exit.xpm Action(Mouse 1) "Module FvwmForm QuitVerify")
 *FvwmButtons(End)
 
 ########################## Icon Manager ####################################
@@ -433,7 +434,7 @@ AddToFunc ChangeDefaultFocus "I" Style "*" $0
 *QuitVerifyLine          center
 *QuitVerifyText          "Exiting the desktop session..."
 *QuitVerifyLine          expand
-*QuitVerifyText		 "Your Current session will be restored upon login."
+*QuitVerifyText		 "Your Current session will not be restored upon login."
 *QuitVerifyLine		 expand
 *QuitVerifyText		 "Application updates you have not saved will be lost."
 *QuitVerifyLine		 expand
