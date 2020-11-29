@@ -1,3 +1,4 @@
+[ -f "$HOME/.Xresources" ] && xrdb -merge "$HOME/.Xresources"
 xsetroot -solid "#2f3444"
 #feh --bg-scale $HOME/Bilder/Bakgrunn.png &
 conky --config /home/geir/.config/conky/cwmconkyrc &
