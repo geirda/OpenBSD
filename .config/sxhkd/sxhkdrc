@@ -1,0 +1,115 @@
+# Misc launchers
+ctrl + super + space
+ pcmanfm
+
+ctrl + super + r
+ rofi -show combi -width 35
+
+super + x
+ rofi -show combi -width 35
+
+ctrl + super + f
+ firefox
+
+ctrl + super + g
+ gimp
+
+Print
+ dmenu-scrot.sh
+
+ctrl + Escape
+ progmenu.sh
+
+# Firefox quick launchers
+super + w
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Wikipedia language code"); [ -z $SOK ] || browser.sh "https://${SOK}.wikipedia.org"
+
+ctrl + super + k
+ browser.sh https://keep.google.com
+
+ctrl + super + m
+ browser.sh https://maps.google.com
+
+ctrl + super + y
+ browser.sh https://www.youtube.com
+
+ctrl + super + w
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Wikipedia"); [ -z $SOK ] || browser.sh "https://en.wikipedia.org/wiki/$SOK"
+
+ctrl + super + a
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Arch Wiki"); [ -z $SOK ] || browser.sh "https://wiki.archlinux.org/?search=$SOK"
+
+ctrl + super + c
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Dict.cc"); [ -z $SOK ] || browser.sh "https://www.dict.cc/?s=$SOK"
+
+ctrl + super + l
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Latin wiktionary"); [ -z $SOK ] || browser.sh "https://la.wiktionary.org/wiki/$SOK"
+
+ctrl + super + t
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Google Translate"); [ -z $SOK ] || browser.sh "https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$SOK"
+
+ctrl + super + x
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Telefonterror"); [ -z $SOK ] || browser.sh "https://www.telefonterror.co.no/nummer/$SOK"
+
+ctrl + super + u
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   Urban Dictionary"); [ -z $SOK ] || browser.sh "https://www.urbandictionary.com/define.php?term=$SOK"
+
+ctrl + super + 1
+ browser.sh https://github.com/geirda
+
+ctrl + super + 2
+ browser.sh https://github.com/atlesn
+
+ctrl + super + 3
+ browser.sh https://gitlab.com/dwt1/dotfiles
+
+ctrl + super + 4
+ browser.sh https://github.com/lukesmithxyz
+
+ctrl + super + 5
+ browser.sh https://gitlab.com/OldTechBloke/dotfiles/
+
+ctrl + super + 6
+ browser.sh https://github.com/BrodieRobertson
+
+# FN-buttons
+ctrl + super + F1
+ browser.sh https://en.wikipedia.org
+
+XF86HomePage
+ browser.sh https://en.wikipedia.org
+
+ctrl + super + F2
+ browser.sh https://gmail.google.com
+
+XF86Mail
+ browser.sh https://gmail.google.com
+
+ctrl + super + F3
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   DuckDuckGo"); [ -z $SOK ] || browser.sh "https://duckduckgo.com/?t=ffnt&q=$SOK"
+
+XF86Search
+ SOK=$(rofi -dmenu -width 30 -l 0 -p "   DuckDuckGo"); [ -z $SOK ] || browser.sh "https://duckduckgo.com/?t=ffnt&q=$SOK"
+
+ctrl + super + F4
+ galculator
+
+XF86Calculator
+ galculator
+
+XF86Tools
+ browser.sh https://focus10music.bandcamp.com
+
+# Volume Control
+XF86AudioLowerVolume
+ amixer set Master 5%-
+
+XF86AudioRaiseVolume
+ amixer set Master 5%+
+
+XF86AudioMute
+ amixer set Master toggle
+
+# Restart sxhkd
+super +r
+ pkill -USR1 -x sxhkd
